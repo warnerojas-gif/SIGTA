@@ -1,0 +1,127 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sigta-navbar {
+    background-color: #17202a;
+    padding: 15px 0;
+}
+
+.sigta-navbar .navbar-brand {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.sigta-navbar .nav-link {
+    margin-left: 12px;
+    transition: 0.2s;
+}
+
+.sigta-navbar .nav-link:hover {
+    opacity: 0.75;
+}
+
+.hero-sigta {
+    background: linear-gradient(135deg, #e9eef3, #ffffff);
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.sigta-subtitle {
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.hero-sigta h1 span {
+    color: #e74c3c;
+}
+
+.btn-sigta {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+}
+
+.btn-sigta:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-indicator {
+    background-color: #d5f5e3;
+    color: #1e8449;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.stat-card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.stat-card p {
+    margin: 5px 0 0;
+    color: #6c757d;
+}
+
+.module-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.module-card h4 {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.module-card p {
+    color: #6c757d;
+    min-height: 70px;
+}
+
+.footer {
+    background: white;
+}
