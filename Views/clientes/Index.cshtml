@@ -1,58 +1,76 @@
+@model IEnumerable<SIGTA.Models.Cliente>
+
 @{
     ViewData["Title"] = "Clientes";
 }
 
-<div class="container py-5">
-
+<div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h1 class="fw-bold">Clientes</h1>
+            <h1>Gestión de Clientes</h1>
             <p class="text-muted">
-                Gestión de clientes del taller automotriz.
+                Registro y consulta de clientes del taller automotriz.
             </p>
         </div>
 
-        <button class="btn btn-sigta">
-            + Nuevo cliente
-        </button>
+        <a asp-action="Crear" class="btn btn-primary">
+            + Registrar cliente
+        </a>
     </div>
 
-    <div class="card shadow-sm border-0">
+    @if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Mensaje"]
+        </div>
+    }
 
-        <div class="card-body">
+    @if (Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre completo</th>
+                        <th>Documento</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                        <th>Dirección</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
 
-            <div class="table-responsive">
-
-                <table class="table align-middle">
-
-                    <thead>
+                <tbody>
+                    @foreach (var cliente in Model)
+                    {
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Documento</th>
-                            <th>Teléfono</th>
-                            <th>Correo</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td colspan="6"
-                                class="text-center text-muted py-5">
-                                No existen clientes registrados.
+                            <td>@cliente.Id</td>
+                            <td>@cliente.NombreCompleto</td>
+                            <td>@cliente.Documento</td>
+                            <td>@cliente.Telefono</td>
+                            <td>@cliente.Correo</td>
+                            <td>@cliente.Direccion</td>
+                            <td>
+                                @if (cliente.Activo)
+                                {
+                                    <span class="badge bg-success">Activo</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Inactivo</span>
+                                }
                             </td>
                         </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
+                    }
+                </tbody>
+            </table>
         </div>
-
-    </div>
-
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No hay clientes registrados.
+        </div>
+    }
 </div>
